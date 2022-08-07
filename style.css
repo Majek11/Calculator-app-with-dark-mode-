@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+:where(html, body) {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+    background-color: #F7F8FA;
+    color: #17181A;
+    width: 300px;
+    height: 620px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    box-shadow: 0 0 15px #ccc;
+}
+
+#app.dark {
+    background-color: #17181A;
+    color: #fff;
+}
+
+#app.dark #mode {
+    background-color: #232428;
+}
+
+#app.dark #mode .moon {
+    display: none;
+}
+
+#app.dark #mode .sun {
+    display: inline-block;
+}
+
+#app #mode .sun {
+    display: none;
+}
+
+.screen {
+    background-color: inherit;
+    height: 200px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* gap: 20px; */
+}
+
+.screen .result {
+    font-size: 30px;
+}
+
+.screen #history {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    color: #696b6f;
+    padding: 5px;
+    position: relative;
+}
+
+.screen #history::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.screen #mode {
+    align-self: flex-start;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 15px #0005;
+    cursor: pointer;
+}
+
+.screen #mode img {
+    width: 26px;
+}
+
+.numpad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 0px 20px 30px;
+}
+
+.scipad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 10px 20px;
+}
+
+:where(.numpad, .scipad) .btn {
+    background-color: #E8F0F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #232428;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+}
+
+#app.dark :where(.numpad, .scipad) .btn {
+    background-color: #232428;
+    color: #fff;
+}
+
+#app.dark .btn:hover {
+    background-color: #35363a;
+}
+
+.btn:active {
+    transition: 0.5s;
+    transform: scale(0.8);
+}
+
+.numpad .opt {
+    background-color: #FF9501;
+    color: #fff;
+}
+
+.numpad .clear {
+    background-color: #F8ECEC;
+    color: crimson;
+}
+
+.numpad .equal {
+    background-color: #2DCA73;
+    color: #fff;
+}
+
+#app.dark .numpad .opt {
+    background-color: #FF9502;
+    color: #fff;
+}
+
+#app.dark .numpad .clear {
+    background-color: #2E191E;
+    color: crimson;
+}
+
+#app.dark .numpad .equal {
+    background-color: #30C970;
+    color: #fff;
+}
+
+.numpad .zero {
+    grid-column: 1 / 3;
+}
